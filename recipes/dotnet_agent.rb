@@ -63,7 +63,8 @@ template config do
     :proxy_host => proxy['host'],
     :proxy_port => proxy['port'],
     :instrument_iis => agent['instrument_iis'],
-    :standalone_apps => agent['standalone_apps']
+    :standalone_apps => agent['standalone_apps'],
+    :iis_apps => agent['iis_apps']
   )
   notifies :restart, 'service[AppDynamics.Agent.Coordinator_service]', :delayed
 end

@@ -8,6 +8,13 @@ default['appdynamics']['dotnet_agent']['instrument_iis'] = false
 
 # instrumenting windows services and/or standalone apps
 # standalone apps must have restart = false because the service resource will fail trying to restart a non-windows service
+default['appdynamics']['dotnet_agent']['iis_apps'] = nil
+# example useage
+# default['appdynamics']['dotnet_agent']['iis_apps'] = [
+#   {
+#     'path' => '/', 'site' => 'SSO', 'tier' => 'TierA'
+#   }
+# ]
 default['appdynamics']['dotnet_agent']['standalone_apps'] = nil
 # example useage
 # default['appdynamics']['dotnet_agent']['standalone_apps'] = [

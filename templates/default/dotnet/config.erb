@@ -9,6 +9,15 @@
   <app-agents>
     <IIS>
       <% if @instrument_iis -%><automatic /><% end -%>
+      <% unless @iis_apps.nil? %> 
+      <applications> 
+      <% @iis_apps.each do |app| %>
+        <application path="<%= app[:path]%>" site="<%= app[:site]%>" <% end %>>
+          <tier name="<%= app[:tier]%>" />
+        </application>
+      <% end %>
+      </applications>
+      <% end %>
     </IIS>
     <% unless @standalone_apps.nil? %> 
     <standalone-applications> 
