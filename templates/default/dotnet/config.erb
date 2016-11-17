@@ -12,7 +12,7 @@
       <% unless @iis_apps.nil? %> 
       <applications> 
       <% @iis_apps.each do |app| %>
-        <application path="<%= app[:path]%>" site="<%= app[:site]%>" <% end %>>
+        <application path="<%= app[:path]%>" site="<%= app[:site]%>">
           <tier name="<%= app[:tier]%>" />
         </application>
       <% end %>
